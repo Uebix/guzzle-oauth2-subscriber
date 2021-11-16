@@ -10,12 +10,14 @@ class RawToken implements Serializable, TokenInterface
     /**
      * @param string $accessToken
      * @param string $refreshToken
+     * @param string $instanceURL
      * @param int    $expiresAt
      */
-    public function __construct($accessToken = null, $refreshToken = null, $expiresAt = null)
+    public function __construct($accessToken = null, $refreshToken = null, $instanceURL = null, $expiresAt = null)
     {
         $this->accessToken  = (string) $accessToken;
         $this->refreshToken = (string) $refreshToken;
+        $this->instanceURL = (string) $instanceURL;
         $this->expiresAt    = (int) $expiresAt;
     }
 
@@ -33,6 +35,14 @@ class RawToken implements Serializable, TokenInterface
     public function getRefreshToken()
     {
         return $this->refreshToken;
+    }
+
+    /**
+     * @return string|null The refresh token
+     */
+    public function getInstanceURL()
+    {
+        return $this->instanceURL;
     }
 
     /**

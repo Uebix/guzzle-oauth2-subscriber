@@ -15,6 +15,11 @@ interface TokenInterface
     public function getRefreshToken();
 
     /**
+     * @return string|null The refresh token
+     */
+    public function getInstanceURL();
+
+    /**
      * @return int The expiration date as a timestamp
      */
     public function getExpiresAt();

@@ -8,6 +8,7 @@ class RawTokenFactory
     {
         $accessToken = null;
         $refreshToken = null;
+        $instanceURL = null;
         $expiresAt = null;
 
         // Read "access_token" attribute
@@ -27,6 +28,9 @@ class RawTokenFactory
             $refreshToken = $previousToken->getRefreshToken();
         }
 
+        // Read the "instance_url" attribute
+        $instanceURL = isset($data['instance_url']) ? $data['instance_url'] : null;
+        
         // Read the "expires_in" attribute
         $expiresIn = isset($data['expires_in']) ? (int) $data['expires_in'] : null;
 
@@ -40,6 +44,6 @@ class RawTokenFactory
             $expiresAt = time() + $expiresIn;
         }
 
-        return new RawToken($accessToken, $refreshToken, $expiresAt);
+        return new RawToken($accessToken, $refreshToken, $instanceURL, $expiresAt);
     }
 }

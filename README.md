@@ -15,6 +15,7 @@ see that they have dropped support for Guzzle < v6 on `master`, which prompted m
 - Supports refresh tokens (stores them and uses them to get new access tokens).
 - Handles token expiration (acquires new tokens and retries failed requests).
 - Allows storage and lookup of access tokens via callbacks
+- SalesForce compatibility
 
 
 ## Installation

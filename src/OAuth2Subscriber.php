@@ -62,6 +62,11 @@ class OAuth2Subscriber extends OAuth2Handler implements SubscriberInterface
         // Only deal with Unauthorized response.
         if ($response && $response->getStatusCode() != 401) {
             return;
+        } else {
+            if($this->rawToken !== null) {
+                $this->rawToken->setExpired();
+                $this->tokenPersistence->saveToken($this->rawToken);
+            }
         }
 
         // If we already retried once, give up.

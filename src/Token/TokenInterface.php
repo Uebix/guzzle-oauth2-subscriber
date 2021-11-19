@@ -28,4 +28,11 @@ interface TokenInterface
      * @return boolean
      */
     public function isExpired();
+    
+    /**
+     * Set the expiration date as 1
+     * 
+     * @return void
+     */
+    public function setExpired();
 }

@@ -60,4 +60,12 @@ class RawToken implements Serializable, TokenInterface
     {
         return $this->expiresAt && $this->expiresAt < time();
     }
+    
+    /**
+     * @return void
+     */
+    public function setExpired()
+    {
+        $this->expiresAt = 1;
+    }
 }

@@ -188,7 +188,7 @@ class OAuth2Handler
     public function deleteAccessToken()
     {
         $this->rawToken = null;
-        $this->tokenPersistence->deleteToken();
+        // $this->tokenPersistence->deleteToken();
     }
 
     /**
